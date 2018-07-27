@@ -79,7 +79,7 @@ namespace PocketMoney.DAL
     	                            END
                                 END");
 
-            ExecuteNonQuery("CryptoTrades", out cmd, query.ToString(), CommandType.Text,
+            ExecuteNonQuery("PocketMoney", out cmd, query.ToString(), CommandType.Text,
                                     CreateParameter("@Id", SqlDbType.BigInt, id, ParameterDirection.InputOutput),
                                     CreateParameter("@AccountId", SqlDbType.Int, (int)accountId, ParameterDirection.InputOutput),
                                     CreateParameter("@Description", SqlDbType.VarChar, description,50, ParameterDirection.InputOutput),
