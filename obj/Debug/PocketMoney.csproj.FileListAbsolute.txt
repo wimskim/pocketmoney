@@ -1,0 +1,10 @@
+C:\Data\Apps\PocketMoney\obj\Debug\PocketMoney.csprojResolveAssemblyReference.cache
+C:\Data\Apps\PocketMoney\bin\Newtonsoft.Json.dll
+C:\Data\Apps\PocketMoney\bin\RestSharp.dll
+C:\Data\Apps\PocketMoney\bin\Newtonsoft.Json.xml
+C:\Data\Apps\PocketMoney\bin\RestSharp.xml
+C:\Data\Apps\PocketMoney\bin\PocketMoney.dll.config
+C:\Data\Apps\PocketMoney\bin\PocketMoney.dll
+C:\Data\Apps\PocketMoney\bin\PocketMoney.pdb
+C:\Data\Apps\PocketMoney\obj\Debug\PocketMoney.dll
+C:\Data\Apps\PocketMoney\obj\Debug\PocketMoney.pdb
