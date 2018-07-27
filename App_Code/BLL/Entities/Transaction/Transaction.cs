@@ -108,31 +108,12 @@ namespace PocketMoney.BLL
         public void Save()
         {
 
-            System.Data.SqlClient.SqlConnection txnConn = DAL.Transactions.GetOpenConnection("PocketMoney");
-            IDbTransaction Txn = txnConn.BeginTransaction();
+       
+            // save alert row changes.
+            DAL.Transactions trans = new DAL.Transactions();
 
-            try
-            {
-                // save alert row changes.
-                DAL.Transactions trans = new DAL.Transactions();
+            trans.Save(ref _id, _accountId, _description, _amount, _timestamp);
 
-                trans.Save(ref _id, _accountId, _description, _amount, _timestamp);
-
-                // commit transaction
-                Txn.Commit();
-            }
-            catch (Exception ex)
-            {
-                Txn.Rollback();
-
-                throw ex;
-            }
-            finally
-            {
-                txnConn.Close();
-                txnConn.Dispose();
-                Txn.Dispose();
-            }
 
 
         }
