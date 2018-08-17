@@ -21,8 +21,8 @@ namespace PocketMoney.DAL
                                                     a.Name as AccountName FROM Transactions t WITH (NOLOCK) 
                                                     LEFT JOIN Accounts a on a.Id = t.AccountId
                                                     WHERE t.TimeStamp between @datefrom and @dateto ORDER BY t.TimeStamp DESC", CommandType.Text,
-                CreateParameter("@datefrom", SqlDbType.Date, from),
-                CreateParameter("@dateto", SqlDbType.Date, to));
+                CreateParameter("@datefrom", SqlDbType.DateTime, from),
+                CreateParameter("@dateto", SqlDbType.DateTime, to));
         }
         public void Save(ref long id,
                              long accountId,

@@ -13,13 +13,9 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SiteMapDataSource1" >
-                    <ItemTemplate>
-                        <li <%# Eval("URL") == SiteMap.CurrentNode.Url ? "class=\"active\"" : "" %>>
-                            <a href="<%# Eval("URL") %>"><%# Eval("Title") %></a>
-                        </li>
-                    </ItemTemplate>
-                </asp:Repeater>
+                <li>
+                    <a href="addtransaction.aspx">Add Transaction</a>
+                </li>
             </ul>
         </div>
     </div>
