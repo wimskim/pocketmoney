@@ -65,7 +65,7 @@
                 <ItemTemplate>
                   <tr id="trRow" runat="server">
                     <td valign="top">
-                      <a href="transactions.aspx?i=<%# Eval("Id") %>"><%# Eval("AccountName") %></a>
+                      <a href="transactions.aspx?i=<%# Eval("AccountId") %>"><%# Eval("AccountName") %></a>
                     </td>
                     <td valign="top">
                       <%# Eval("Description") %>
