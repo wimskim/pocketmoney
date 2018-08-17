@@ -12,5 +12,12 @@ namespace PocketMoney.BLL
             obj.MapObjects(ds);
             return obj;
         }
+        public static TransactionCollection GetByDate(DateTime from, DateTime to)
+        {
+            TransactionCollection obj = new TransactionCollection();
+            DataSet ds = new DAL.Transactions().GetByDate(from, to);
+            obj.MapObjects(ds);
+            return obj;
+        }
     }
 }

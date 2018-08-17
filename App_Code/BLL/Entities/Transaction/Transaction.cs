@@ -10,6 +10,7 @@ namespace PocketMoney.BLL
         #region Fields
         private long _id = Constants.NullLong;
         private int _accountId = Constants.NullInt;
+        private string _accountName = Constants.NullString;
         private string _description = Constants.NullString;
         private decimal _amount = Constants.NullDecimal;
         private DateTime _timestamp = Constants.NullDateTime;
@@ -36,6 +37,13 @@ namespace PocketMoney.BLL
             set
             {
                 _accountId = value;
+            }
+        }
+        public string AccountName
+        {
+            get
+            {
+                return _accountName;
             }
         }
 
@@ -85,6 +93,7 @@ namespace PocketMoney.BLL
         {
             _id = GetLong(row, "Id");
             _accountId = GetInt(row, "AccountId");
+            _accountName = GetString(row, "AccountName");
             _description = GetString(row, "Description");
             _amount = GetDecimal(row, "Amount");
             _timestamp = GetDateTime(row, "TimeStamp");

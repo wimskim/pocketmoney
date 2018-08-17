@@ -2,5 +2,6 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="~/default.aspx" title="HOME"  description="">
       <siteMapNode url="~/addtransaction.aspx" title="Add Transaction" description="" />
+      <siteMapNode url="~/transactions.aspx" title="transactions" description="" />
     </siteMapNode>
 </siteMap>

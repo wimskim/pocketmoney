@@ -93,6 +93,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Template\Menu.ascx" />
+    <Content Include="transactions.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="Template\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="transactions.aspx.cs">
+      <DependentUpon>transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="transactions.aspx.designer.cs">
+      <DependentUpon>transactions.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

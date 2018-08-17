@@ -21,9 +21,9 @@ namespace PocketMoney
             rptrAccounts.DataSource = BLL.AccountCollection.GetAll();
             rptrAccounts.DataBind();
 
+            rptrToday.DataSource = BLL.TransactionCollection.GetByDate(DateTime.Now.Date, DateTime.Now.Date.AddDays(1).AddMilliseconds(-1));
+            rptrToday.DataBind();
+
         }
-
-
-
     }
 }

@@ -7,24 +7,22 @@ namespace PocketMoney.DAL
     class Transactions : DAL.DALBase
     {
 
-
-        //public DataSet GetAll()
-        //{
-        //    return ExecuteDataSet("PocketMoney", @"Select 
-        //                                         a.Id,
-        //                                         a.Name,
-        //                                         a.DailyAllowance,
-        //                                         Sum(t.amount) as Balance
-        //                                        From Accounts a
-        //                                        LEFT OUTER JOIN Transactions t on t.AccountId = a.id
-        //                                        GROUP BY a.Id,a.Name,a.DailyAllowance
-        //                                        ORDER BY a.Id", CommandType.Text);
-        //}
-
         public DataSet GetByAccountId(int accountId)
         {
-            return ExecuteDataSet("PocketMoney", "SELECT * FROM Transactions WITH (NOLOCK) WHERE AccountId = @AccountId ORDER BY TimeStamp DESC", CommandType.Text,
+            return ExecuteDataSet("PocketMoney", @"SELECT t.*,
+                                                    a.Name as AccountName FROM Transactions t WITH (NOLOCK) 
+                                                    LEFT JOIN Accounts a on a.Id = t.AccountId
+                                                    WHERE t.AccountId = @AccountId ORDER BY t.TimeStamp DESC", CommandType.Text,
                 CreateParameter("@AccountId", SqlDbType.Int, accountId));
+        }
+        public DataSet GetByDate(DateTime from, DateTime to)
+        {
+            return ExecuteDataSet("PocketMoney", @"SELECT t.*,
+                                                    a.Name as AccountName FROM Transactions t WITH (NOLOCK) 
+                                                    LEFT JOIN Accounts a on a.Id = t.AccountId
+                                                    WHERE t.TimeStamp between @datefrom and @dateto ORDER BY t.TimeStamp DESC", CommandType.Text,
+                CreateParameter("@datefrom", SqlDbType.Date, from),
+                CreateParameter("@dateto", SqlDbType.Date, to));
         }
         public void Save(ref long id,
                              long accountId,
